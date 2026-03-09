@@ -90,30 +90,10 @@ dotnet run --project src/HiMilet.Desktop/HiMilet.Desktop.csproj -c Debug
 
 ## 🗺️ 产品方向 (Roadmap)
 
-- [ ] 让“投喂 / 面板 / 互动 / 系统”四类经典桌宠菜单都具备智能化可用能力。
 - [ ] 增强趣味互动（摸头反馈、主动问候、依据天气/时间的彩蛋互动）。
 - [ ] 完善配置体验（前端可视化直接配置 + 本地配置文件 + 后端配置流）。
-- [X] 引入 Background Agent 实现离线长期任务追踪。
+- [ ] 引入 Background Agent 实现离线长期任务追踪。
 - [ ] 逐步接入更多陪伴型 Agent 能力（时间管理、文档助手、效率提升工作流）。
-
----
-
-## ❓ 常见问题 (FAQ)
-
-<details>
-<summary><strong>1. 启动后看不到窗口？</strong></summary>
-这是透明的无边框桌宠窗体。请先检查任务管理器中 `HiMilet.Desktop` 进程是否在运行，或者系统托盘是否有图标。
-</details>
-
-<details>
-<summary><strong>2. 构建失败提示 DLL 被占用？</strong></summary>
-极大概率是因为之前的客户端没有完全退出。在终端执行 `Stop-Process -Name HiMilet.Desktop -Force` 杀掉残留进程后重试构建即可。
-</details>
-
-<details>
-<summary><strong>3. 聊天提示“未配置 LLM”？</strong></summary>
-网关默认不含内置密钥。你需要先前往设置/控制台配置可用的模型 Profile（如 OpenAI、阿里云百炼等）和 API 密钥，并将该配置设为 Active。
-</details>
 
 ---
 
