@@ -2,8 +2,6 @@
 
 # 🌟 HiMilet：你的全能陪伴式 AI 管家
 
-<img src="./image/intro.png" alt="HiMilet Intro" width="600" />
-
 [![.NET 8.0](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/)
 [![Node.js](https://img.shields.io/badge/Node.js->=18-green.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -35,30 +33,31 @@ HiMilet 的核心定位正是填补这一空白：**陪伴感 + 可执行能力 
 > **致谢 (Credits):** 本项目中桌宠角色的视觉形象与底层桌宠动画框架，深度复用并致谢于优秀的开源项目 [**VPet (虚拟桌宠模拟器)**](https://github.com/LorisYounger/VPet) by LorisYounger。
 
 <div align="center">
-  <img src="./screenshot.png" alt="HiMilet Screenshot" width="500" />
+  <img src="./image/intro.png" alt="HiMilet Intro" width="500" />
 </div>
 
 ### 2️⃣ 强大的 AI 管家能力 (Agentic Capability)
 - 💬 **聊天式交互**：自然语言直接发起需求，支持流式输出、中断后继续。
 - 🛠️ **工具能力调用**：内置日程提醒、本地文件查找、网络搜索等日常任务工具。
-- 🔄 **[新] Agentic ReAct Loop**：当复杂的连续任务遇到错误或搜不到信息时，**主动更换策略继续尝试**。执行过程中会在聊天列表实时呈现动态中间进展（如下方追踪微博热搜示例）。
+
+<div align="center">
+  <img src="./image/approve.png" alt="Approval Modal" width="500" />
+</div>
+
+- 🔄 **Agentic ReAct Loop**：当复杂的连续任务遇到错误或搜不到信息时，**主动更换策略继续尝试**。执行过程中会在聊天列表实时呈现动态中间进展
 
 <div align="center">
   <img src="./image/weibo.png" alt="ReAct Loop Demo" width="500" />
   <p><i>（自动重试与多轮工具调用展示）</i></p>
 </div>
 
-- 🕵️ **[新] 后台隐形追踪器 (Background Tracker)**：你可以要求它在后台每隔一段时间自动帮你追踪特定信息（如查金价跌幅、监控特定内容），并在满足条件时主动通知你。
+- 🕵️ **后台隐形追踪器 (Background Tracker)**：你可以要求它在后台每隔一段时间自动帮你追踪特定信息（如提醒喝水、查金价跌幅、监控特定内容），并在满足条件时主动通知你。
 
 ### 3️⃣ 极高的安全与可控 (Security & Privacy)
 将执行权交给 AI 的前提是绝对的安全。
 - 🛡️ **人工审批门控 (Human-in-the-loop)**：任何可能的高风险操作（如打开网页、执行 Shell 脚本）必须先弹出拦截视窗，由你决定 `Allow` 或 `Deny`。
 - 🔐 **权限策略可配置**：可通过沙箱限制文件访问范围（支持工作区隔离、白名单模式、全盘模式）。
 - 🔑 **凭证安全**：敏感密钥全量基于 Windows DPAPI 进行本地强加密存储。
-
-<div align="center">
-  <img src="./image/approve.png" alt="Approval Modal" width="500" />
-</div>
 
 ---
 
