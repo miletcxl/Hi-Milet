@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../HiMilet.Protocol/HiMilet.Protocol.csproj" />
+    <ProjectReference Include="../HiMilet.Adapters.OpenClaw/HiMilet.Adapters.OpenClaw.csproj" />
+    <ProjectReference Include="../../../VPet/VPet-Simulator.Core/VPet-Simulator.Core.csproj" />
+    <ProjectReference Include="../../../VPet/VPet-Simulator.Windows.Interface/VPet-Simulator.Windows.Interface.csproj" />
+  </ItemGroup>
+</Project>

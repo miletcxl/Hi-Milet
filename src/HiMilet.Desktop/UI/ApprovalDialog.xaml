@@ -1,0 +1,55 @@
+<Window x:Class="HiMilet.Desktop.UI.ApprovalDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Permission Request"
+        Width="580"
+        Height="320"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Background="#FF1A1A1A"
+        Foreground="#FFF5F5F5">
+    <Grid Margin="18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Hi!Milet needs your approval"
+                   FontSize="20"
+                   FontWeight="SemiBold" />
+
+        <TextBlock Grid.Row="1"
+                   Margin="0,8,0,0"
+                   Text="The backend requested an elevated action. Review details before allowing."
+                   Opacity="0.85" />
+
+        <Border Grid.Row="2"
+                Margin="0,14,0,14"
+                Padding="10"
+                Background="#FF2A2A2A"
+                BorderBrush="#FF5A5A5A"
+                BorderThickness="1"
+                CornerRadius="6">
+            <TextBox x:Name="RequestText"
+                     IsReadOnly="True"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     Foreground="White"
+                     FontFamily="Consolas"
+                     FontSize="13" />
+        </Border>
+
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Width="88" Height="34" Margin="0,0,8,0" Click="Deny_Click" Content="Deny" />
+            <Button Width="88" Height="34" Click="Allow_Click" Content="Allow" />
+        </StackPanel>
+    </Grid>
+</Window>

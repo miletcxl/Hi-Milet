@@ -1,0 +1,114 @@
+<Window x:Class="HiMilet.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hi!Milet"
+        Width="380"
+        Height="620"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="#10000000"
+        Topmost="True"
+        ShowInTaskbar="False"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        PreviewMouseRightButtonDown="Window_PreviewMouseRightButtonDown">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="280" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                CornerRadius="8"
+                Padding="8"
+                Background="#CC171717"
+                BorderBrush="#88444444"
+                BorderThickness="1">
+            <StackPanel>
+                <TextBlock x:Name="StatusText"
+                           Text="starting"
+                           FontSize="11"
+                           Foreground="#FFF2F2F2"
+                           Margin="0,0,0,6" />
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="56" Margin="0,0,6,0" Click="Reconnect_Click" Content="Reconnect" />
+                    <Button Width="50" Margin="0,0,6,0" Click="Topmost_Click" Content="Top" />
+                    <Button Width="50" Click="HitThrough_Click" Content="Pass" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1"
+                x:Name="PetHost"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                PreviewMouseLeftButtonDown="PetHost_PreviewMouseLeftButtonDown"
+                PreviewMouseLeftButtonUp="PetHost_PreviewMouseLeftButtonUp" />
+
+        <Border Grid.Row="2"
+                CornerRadius="8"
+                Padding="8"
+                Margin="0,8,0,0"
+                Background="#CC171717"
+                BorderBrush="#88444444"
+                BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ListBox x:Name="ChatItems"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="{Binding Alignment}"
+                                        Margin="0,0,0,8"
+                                        MaxWidth="300">
+                                <Border Background="{Binding BubbleBackground}"
+                                        CornerRadius="8"
+                                        Padding="8">
+                                    <TextBlock Text="{Binding Text}"
+                                               Foreground="{Binding TextForeground}"
+                                               TextWrapping="Wrap" />
+                                </Border>
+                                <Button Margin="0,4,0,0"
+                                        Padding="6,2"
+                                        HorizontalAlignment="Left"
+                                        Visibility="{Binding ContinueVisibility}"
+                                        Content="继续生成"
+                                        Tag="{Binding MessageId}"
+                                        Click="ContinueMessage_Click" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock x:Name="ChatConnectionText"
+                               Foreground="#FFC8C8C8"
+                               FontSize="11"
+                               Margin="0,0,0,4"
+                               Text="chat offline" />
+                    <DockPanel>
+                        <TextBox x:Name="ChatInput"
+                                 MinHeight="50"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"
+                                 KeyDown="ChatInput_KeyDown" />
+                        <Button Width="56"
+                                Margin="8,0,0,0"
+                                DockPanel.Dock="Right"
+                                Content="Send"
+                                Click="SendChat_Click" />
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+{
+  "name": "himilet-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sql.js": "^1.13.0",
+    "uuid": "^11.1.0",
+    "ws": "^8.18.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^24.10.1",
+    "@types/sql.js": "^1.4.9",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.3",
+    "typescript": "~5.9.3",
+    "vitest": "^2.1.9"
+  }
+}
